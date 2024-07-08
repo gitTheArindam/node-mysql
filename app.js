@@ -1,4 +1,5 @@
-import express, { json } from 'express';
+import express from 'express';
+import helmet from 'helmet';
 import {
 	getAllProducts,
 	getProduct,
@@ -7,6 +8,7 @@ import {
 } from './database.js';
 
 const app = express();
+app.use(helmet());
 app.use(express.json());
 
 app.get('/products', async (req, res) => {
