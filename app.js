@@ -39,6 +39,7 @@ app.use((err, req, res, next) => {
 	res.status(500).send('Something broke!');
 });
 
-app.listen(3000, () => {
-	console.log('Listening to PORT 3000...');
+const port = process.env.SERVER_PORT || 3000;
+app.listen(port, () => {
+	console.log(`Listening to PORT ${port}...`);
 });
